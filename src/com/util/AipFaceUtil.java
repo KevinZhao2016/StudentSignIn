@@ -4,7 +4,6 @@ import com.baidu.aip.face.AipFace;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AipFaceUtil {
@@ -40,7 +39,12 @@ public class AipFaceUtil {
                 JSONObject result = (JSONObject) res.get("result");
                 JSONArray userlist =  (JSONArray)result.get("user_list");
                 JSONObject userinfo = (JSONObject)userlist.get(0);
-                return (String) userinfo.get("user_id");
+                if ((int)userinfo.get("score") > 75) {
+                    return (String) userinfo.get("user_id");
+                }
+                else {
+                    return null;
+                }
             }else{
                 return null;
             }

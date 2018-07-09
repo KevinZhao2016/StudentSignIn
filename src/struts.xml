@@ -5,4 +5,10 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
+    <package  name="default" namespace="/action" extends="struts-default,json-default">
+        <action name="register" class="com.action.SignInAction" method="execute">
+            <result name="success" type="redirect"></result>
+            <result name="fail"></result>
+        </action>
+    </package>
 </struts>
