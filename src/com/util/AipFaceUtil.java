@@ -54,7 +54,7 @@ public class AipFaceUtil {
         }
     }
 
-    public int FaceAdd(String face,String id) {
+    public String FaceAdd(String face,String id) {
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         options.put("user_info", "");
@@ -71,16 +71,16 @@ public class AipFaceUtil {
         System.out.println(res.toString(2));
         try {
             if (res.get("error_code").equals(0)) {
-                return 1;
+                return (String)res.get("face_token");
             }else
-                return 0;
+                return null;
         } catch (Exception e) {
             e.printStackTrace();
-            return 0;
+            return null;
         }
     }
 
-    public int FaceUpdate(String face,String id) {
+    public String FaceUpdate(String face,String id) {
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         options.put("user_info", "");
@@ -97,12 +97,12 @@ public class AipFaceUtil {
         System.out.println(res.toString(2));
         try {
             if (res.get("error_code").equals(0)) {
-                return 1;
+                return (String)res.get("face_token");
             }else
-                return 0;
+                return null;
         } catch (Exception e) {
             e.printStackTrace();
-            return 0;
+            return null;
         }
     }
 
@@ -128,5 +128,4 @@ public class AipFaceUtil {
             return "exception";
         }
     }
-    
 }
