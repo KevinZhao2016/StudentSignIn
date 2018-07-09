@@ -2,6 +2,6 @@ package service;
 
 import com.model.StudentEntity;
 
-public interface FaceSerachServer {
+public interface FaceSearchServer {
     StudentEntity FindStudentByFace(String face);
 }

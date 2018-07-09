@@ -59,10 +59,8 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
-    <orderEntry type="library" name="Struts2" level="project" />
-    <orderEntry type="library" name="json-20160810" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.44-bin1" level="project" />
-    <orderEntry type="library" name="log4j-1.2.17" level="project" />
-    <orderEntry type="library" name="aip-java-sdk-4.3.22" level="project" />
+    <orderEntry type="library" name="commons-beanutils-1.9.2" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.44-bin" level="project" />
+    <orderEntry type="library" name="aip-java-sdk-4.3.2" level="project" />
   </component>
 </module>

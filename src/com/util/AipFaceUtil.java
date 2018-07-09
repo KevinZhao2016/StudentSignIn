@@ -7,11 +7,11 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 public class AipFaceUtil {
-    public static final String APP_ID = "11505765";
-    public static final String API_KEY = "wypfpS5MPbqljAbntrcPc8no";
-    public static final String SECRET_KEY = "2dzsONOTfl90LiEHzZmdPhULmeS16Qsb";
+    private static final String APP_ID = "11505765";
+    private static final String API_KEY = "wypfpS5MPbqljAbntrcPc8no";
+    private static final String SECRET_KEY = "2dzsONOTfl90LiEHzZmdPhULmeS16Qsb";
 
-    public static AipFace client = new AipFace(APP_ID, API_KEY, SECRET_KEY);
+    private static AipFace client = new AipFace(APP_ID, API_KEY, SECRET_KEY);
 
     public static void main(String[] args) {
         // 初始化一个AipFace
@@ -53,4 +53,80 @@ public class AipFaceUtil {
             return null;
         }
     }
+
+    public int FaceAdd(String face,String id) {
+        // 传入可选参数调用接口
+        HashMap<String, String> options = new HashMap<String, String>();
+        options.put("user_info", "");
+        options.put("quality_control", "LOW");
+        options.put("liveness_control", "LOW");
+
+        String image = face;
+        String imageType = "BASE64";
+        String groupId = "student";
+        String userId = id;
+
+        // 人脸注册
+        JSONObject res = client.addUser(image, imageType, groupId, userId, options);
+        System.out.println(res.toString(2));
+        try {
+            if (res.get("error_code").equals(0)) {
+                return 1;
+            }else
+                return 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public int FaceUpdate(String face,String id) {
+        // 传入可选参数调用接口
+        HashMap<String, String> options = new HashMap<String, String>();
+        options.put("user_info", "");
+        options.put("quality_control", "LOW");
+        options.put("liveness_control", "LOW");
+
+        String image = face;
+        String imageType = "BASE64";
+        String groupId = "student";
+        String userId = id;
+
+        // 人脸更新
+        JSONObject res = client.updateUser(image, imageType, groupId, userId, options);
+        System.out.println(res.toString(2));
+        try {
+            if (res.get("error_code").equals(0)) {
+                return 1;
+            }else
+                return 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public String FaceDelete(String id,String token) {
+        // 传入可选参数调用接口
+        HashMap<String, String> options = new HashMap<String, String>();
+
+        String userId = id;
+        String groupId = "student";
+        String faceToken = token;
+
+        // 人脸删除
+        JSONObject res = client.faceDelete(userId, groupId, faceToken, options);
+        System.out.println(res.toString(2));
+        try {
+            if (res.get("error_code").equals(0)) {
+                return "success";
+            }else{
+                return (String)res.get("error_msg");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "exception";
+        }
+    }
+    
 }
