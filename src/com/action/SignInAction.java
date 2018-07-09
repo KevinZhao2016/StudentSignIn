@@ -2,8 +2,12 @@ package com.action;
 
 import com.model.StudentEntity;
 import com.opensymphony.xwork2.ActionContext;
+import org.apache.struts2.ServletActionContext;
 import service.FaceSerachServer;
 import service.impl.FaceSearcherverImpl;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import java.util.Map;
 
@@ -28,6 +32,13 @@ public class SignInAction {
     }
 
     public String execute() throws Exception {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
+
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+        this.setFace(request.getParameter("face"));
+
         FaceSerachServer faceSeracherver = new FaceSearcherverImpl();
         StudentEntity student = faceSeracherver.FindStudentByFace(this.face);
         if (student != null) {

@@ -8,7 +8,7 @@
     <package  name="default" namespace="/action" extends="struts-default,json-default">
         <action name="signin" class="com.action.SignInAction" method="execute">
             <result name="success" type="json" ></result>
-            <result name="fail"></result>
+            <result name="fail" type="json" ></result>
         </action>
     </package>
 </struts>
