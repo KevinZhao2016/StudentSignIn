@@ -39,7 +39,7 @@ public class AipFaceUtil {
                 JSONObject result = (JSONObject) res.get("result");
                 JSONArray userlist =  (JSONArray)result.get("user_list");
                 JSONObject userinfo = (JSONObject)userlist.get(0);
-                if ((int)userinfo.get("score") > 75) {
+                if ((double)userinfo.get("score") > 75) {
                     return (String) userinfo.get("user_id");
                 }
                 else {

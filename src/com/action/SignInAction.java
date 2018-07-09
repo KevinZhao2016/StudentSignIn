@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 public class SignInAction {
-    private String face;//Base64编码图片
+//    private String face;//Base64编码图片
     private StudentEntity studentEntity;
 
     public StudentEntity getStudentEntity() {
@@ -23,13 +23,13 @@ public class SignInAction {
         this.studentEntity = studentEntity;
     }
 
-    public String getFace() {
-        return face;
-    }
-
-    public void setFace(String face) {
-        this.face = face;
-    }
+//    public String getFace() {
+//        return face;
+//    }
+//
+//    public void setFace(String face) {
+//        this.face = face;
+//    }
 
     public String execute() throws Exception {
         HttpServletRequest request = ServletActionContext.getRequest();
@@ -37,15 +37,16 @@ public class SignInAction {
 
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        this.setFace(request.getParameter("face"));
-
+        String face;
+        face=request.getParameter("face");
+//        System.out.println(face);
         FaceSerachServer faceSeracherver = new FaceSearcherverImpl();
-        StudentEntity student = faceSeracherver.FindStudentByFace(this.face);
+        StudentEntity student = faceSeracherver.FindStudentByFace(face);
         if (student != null) {
             ActionContext actionContext = ActionContext.getContext();
             Map session = actionContext.getSession();
             session.put("student",student);
-            this.studentEntity = student;
+            this.setStudentEntity(student);
             return "success";
         } else
             return "fail";

@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Struts2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/commons-beanutils-1.9.2.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/commons-collections-3.2.2.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/commons-fileupload-1.3.3.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/commons-io-2.5.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/commons-lang3-3.6.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/commons-logging-1.1.3.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/freemarker-2.3.23.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/javassist-3.20.0-GA.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/json-lib-2.4-jdk15.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/log4j-api-2.8.2.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/ognl-3.1.15.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/struts2-core-2.5.13.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/struts-2.5.13/lib/struts2-json-plugin-2.5.14.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

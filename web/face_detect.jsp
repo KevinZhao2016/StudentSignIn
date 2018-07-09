@@ -77,22 +77,24 @@
             function getPhoto() {
                 scContext.drawImage(video,0,0,290,218);
                 var imgStr = shortCut.toDataURL("image/png");
+//                console.log(imgStr);
                 //将拍照的图片数据发送到后台
                 $.ajax({
-                    url:"identifyUser",
+                    url:"/action/signin",
                     type:"post",
                     dataType:"json",
                     data:{
-                        imgStr:imgStr.substring(imgStr.indexOf(",")+1)
+                        face:imgStr.substring(imgStr.indexOf(",")+1)
                     },
                     success:function(result){
-                        if(result.result == "true"){
-                            if(result.user != "404"){
-                                send("user_info:"+result.user);
+                        if(result!=null){
+                                alert(result.studentEntity.sName);
                             }
+                            else {
+                            alert("签到失败");
+                        }
                         }
 
-                    }
                 });
 
             }

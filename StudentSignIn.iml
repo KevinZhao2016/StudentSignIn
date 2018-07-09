@@ -14,8 +14,8 @@
         <configuration>
           <fileset id="s2fileset" name="Default File Set " removed="false">
             <file>file://$MODULE_DIR$/src/struts.xml</file>
-            <file>jar://$MODULE_DIR$/../../javalib/struts-2.5.13/lib/struts2-json-plugin-2.5.14.1.jar!/struts-plugin.xml</file>
-            <file>jar://$MODULE_DIR$/../../javalib/struts-2.5.13/lib/struts2-core-2.5.13.jar!/struts-default.xml</file>
+            <file>jar://C:/javalib/struts-2.5.13/lib/struts2-json-plugin-2.5.14.1.jar!/struts-plugin.xml</file>
+            <file>jar://C:/javalib/struts-2.5.13/lib/struts2-core-2.5.13.jar!/struts-default.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>
@@ -46,11 +46,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Struts 2" level="project" />
     <orderEntry type="library" name="Spring-4.3.18.RELEASE" level="project" />
     <orderEntry type="library" name="Hibernate 5.2.17-5.2.17" level="project" />
-    <orderEntry type="library" name="aip-java-sdk-4.3.2" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.44-bin" level="project" />
     <orderEntry type="module-library" scope="TEST">
       <library name="JUnit4">
         <CLASSES>
@@ -62,5 +59,10 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="Struts2" level="project" />
+    <orderEntry type="library" name="json-20160810" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.44-bin1" level="project" />
+    <orderEntry type="library" name="log4j-1.2.17" level="project" />
+    <orderEntry type="library" name="aip-java-sdk-4.3.22" level="project" />
   </component>
 </module>
