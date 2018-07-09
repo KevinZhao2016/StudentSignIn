@@ -9,6 +9,15 @@ import java.util.Map;
 
 public class SignInAction {
     private String face;//Base64编码图片
+    private StudentEntity studentEntity;
+
+    public StudentEntity getStudentEntity() {
+        return studentEntity;
+    }
+
+    public void setStudentEntity(StudentEntity studentEntity) {
+        this.studentEntity = studentEntity;
+    }
 
     public String getFace() {
         return face;
@@ -25,6 +34,7 @@ public class SignInAction {
             ActionContext actionContext = ActionContext.getContext();
             Map session = actionContext.getSession();
             session.put("student",student);
+            this.studentEntity = student;
             return "success";
         } else
             return "fail";
