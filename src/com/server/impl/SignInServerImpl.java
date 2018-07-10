@@ -24,7 +24,7 @@ public class SignInServerImpl implements SignInServer {
         TeacherDao teacherDao = new TeacherDaoImpl();
 
         Calendar calendar = Calendar.getInstance();//可以对每个时间域单独修改
-        TeacherEntity teacher = teacherDao.findTeacherByName(course.gettUserName());
+        //TeacherEntity teacher = teacherDao.findTeacherByName(course.gettUserName());
 
         presenceEntity.settUserName(course.gettUserName());
         presenceEntity.setSno(sno);
