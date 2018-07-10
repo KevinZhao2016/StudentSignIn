@@ -9,8 +9,6 @@
         <property name="show_sql">true</property>
         <property name="hibernate.connection.pool_size">20</property>
         <property name="connection.characterEncoding">UTF-8</property>
-        <property name="connection.username">Ubuntu</property>
-        <property name="connection.password">123456</property>
         <mapping resource="com/model/AdminEntity.hbm.xml"/>
         <mapping class="com.model.AdminEntity"/>
         <mapping resource="com/model/CourseEntity.hbm.xml"/>

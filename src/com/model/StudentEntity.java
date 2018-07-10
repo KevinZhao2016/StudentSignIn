@@ -12,6 +12,7 @@ public class StudentEntity {
     private String sAge;
     private String sSex;
     private String sMajor;
+    private String token;
 
     @Id
     @Column(name = "SID", nullable = false)
@@ -73,6 +74,16 @@ public class StudentEntity {
         this.sMajor = sMajor;
     }
 
+    @Basic
+    @Column(name = "Token", nullable = false, length = 255)
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -83,12 +94,13 @@ public class StudentEntity {
                 Objects.equals(sName, that.sName) &&
                 Objects.equals(sAge, that.sAge) &&
                 Objects.equals(sSex, that.sSex) &&
-                Objects.equals(sMajor, that.sMajor);
+                Objects.equals(sMajor, that.sMajor) &&
+                Objects.equals(token, that.token);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(sid, sno, sName, sAge, sSex, sMajor);
+        return Objects.hash(sid, sno, sName, sAge, sSex, sMajor, token);
     }
 }

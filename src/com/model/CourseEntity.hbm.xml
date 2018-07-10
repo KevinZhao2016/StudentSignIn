@@ -14,5 +14,14 @@
         <property name="tUserName">
             <column name="TUserName" sql-type="varchar(20)" length="20"/>
         </property>
+        <property name="cStart">
+            <column name="CStart" sql-type="time"/>
+        </property>
+        <property name="cEnd">
+            <column name="CEnd" sql-type="time"/>
+        </property>
+        <property name="cno">
+            <column name="Cno" sql-type="int(11)"/>
+        </property>
     </class>
 </hibernate-mapping>

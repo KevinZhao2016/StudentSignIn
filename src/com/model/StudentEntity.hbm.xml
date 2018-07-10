@@ -23,5 +23,8 @@
         <property name="sMajor">
             <column name="SMajor" sql-type="varchar(20)" length="20"/>
         </property>
+        <property name="token">
+            <column name="Token" sql-type="varchar(255)"/>
+        </property>
     </class>
 </hibernate-mapping>

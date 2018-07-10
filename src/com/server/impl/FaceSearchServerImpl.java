@@ -1,12 +1,12 @@
-package service.impl;
+package com.server.impl;
 
 import com.dao.StudentDao;
 import com.dao.impl.StudentDaoImpl;
 import com.model.StudentEntity;
+import com.server.FaceSearchServer;
 import com.util.AipFaceUtil;
-import service.FaceSearchServer;
 
-public class FaceSearcherverImpl implements FaceSearchServer {
+public class FaceSearchServerImpl implements FaceSearchServer{
     @Override
     public StudentEntity FindStudentByFace(String image){
         AipFaceUtil aipFaceUtil = new AipFaceUtil();

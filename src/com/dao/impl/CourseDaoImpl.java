@@ -1,22 +1,21 @@
 package com.dao.impl;
 
-import com.dao.StudentDao;
-import com.model.StudentEntity;
+import com.dao.CourseDao;
+import com.model.CourseEntity;
+import com.model.PresenceEntity;
 import com.util.HibernateUtil;
 import org.hibernate.HibernateException;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class StudentDaoImpl implements StudentDao {
-
-    @Override
-    public List ListStudent() {
+public class CourseDaoImpl implements CourseDao{
+    public List ListCourse(){
         Session session = new HibernateUtil().getSession();
         try {
-            List<StudentEntity> list = session.createQuery("FROM StudentEntity user").list();
+            List<PresenceEntity> list = session.createQuery("FROM CourseEntity Course").list();
             return list;
         } catch (HibernateException e) {
             e.printStackTrace();
@@ -26,12 +25,11 @@ public class StudentDaoImpl implements StudentDao {
         }
     }
 
-    @Override
-    public Boolean RegisterStudent(StudentEntity student){
+    public Boolean AddCourse(CourseEntity course){
         Session session = new HibernateUtil().getSession();
         Transaction tran = session.beginTransaction();
         try {
-            session.save(student);
+            session.save(course);
             tran.commit();
             return true;
         }catch (HibernateException e){
@@ -46,12 +44,11 @@ public class StudentDaoImpl implements StudentDao {
         }
     }
 
-    @Override
-    public Boolean UpdateUser(StudentEntity student){
+    public Boolean UpdateCourse(CourseEntity course){
         Session session = new HibernateUtil().getSession();
         Transaction tran = session.beginTransaction();
         try {
-            session.update(student);
+            session.update(course);
             tran.commit();
             return true;
         } catch (HibernateException e) {
@@ -66,27 +63,25 @@ public class StudentDaoImpl implements StudentDao {
         }
     }
 
-    @Override
-    public StudentEntity findStudentByID(String id){
+    public CourseEntity findCourseByID(int id){
         Session session = new HibernateUtil().getSession();
-        String hql = "from StudentEntity where sno = ?";
+        String hql = "from CourseEntity where cid = ?";
         Query query = session.createQuery(hql);
         query.setParameter(0, id);
-        StudentEntity user = (StudentEntity) query.uniqueResult();
-        if (user != null) {
-            return user;
+        CourseEntity course = (CourseEntity) query.uniqueResult();
+        if (course != null) {
+            return course;
         } else {
-            return new StudentEntity();
+            return null;
         }
     }
 
-    @Override
-    public Boolean DeleteStudent(String id) {
+    public Boolean DeleteCourse(int id){
         Session session = new HibernateUtil().getSession();
-        StudentEntity user = this.findStudentByID(id);
+        CourseEntity course = this.findCourseByID(id);
         Transaction tran = session.beginTransaction();
         try {
-            session.delete(user);
+            session.delete(course);
             tran.commit();
             return true;
         } catch (HibernateException e) {

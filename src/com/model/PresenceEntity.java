@@ -1,6 +1,7 @@
 package com.model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
@@ -10,6 +11,8 @@ public class PresenceEntity {
     private String tUserName;
     private String sno;
     private int cid;
+    private Timestamp time;
+    private int state;
 
     @Id
     @Column(name = "PID", nullable = false)
@@ -51,6 +54,26 @@ public class PresenceEntity {
         this.cid = cid;
     }
 
+    @Basic
+    @Column(name = "Time", nullable = false)
+    public Timestamp getTime() {
+        return time;
+    }
+
+    public void setTime(Timestamp time) {
+        this.time = time;
+    }
+
+    @Basic
+    @Column(name = "State", nullable = false)
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -58,13 +81,15 @@ public class PresenceEntity {
         PresenceEntity that = (PresenceEntity) o;
         return pid == that.pid &&
                 cid == that.cid &&
+                state == that.state &&
                 Objects.equals(tUserName, that.tUserName) &&
-                Objects.equals(sno, that.sno);
+                Objects.equals(sno, that.sno) &&
+                Objects.equals(time, that.time);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(pid, tUserName, sno, cid);
+        return Objects.hash(pid, tUserName, sno, cid, time, state);
     }
 }

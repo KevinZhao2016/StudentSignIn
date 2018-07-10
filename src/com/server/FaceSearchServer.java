@@ -1,4 +1,4 @@
-package service;
+package com.server;
 
 import com.model.StudentEntity;
 

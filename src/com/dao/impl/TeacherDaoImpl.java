@@ -1,7 +1,7 @@
 package com.dao.impl;
 
-import com.dao.StudentDao;
-import com.model.StudentEntity;
+import com.dao.TeacherDao;
+import com.model.TeacherEntity;
 import com.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -10,13 +10,11 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class StudentDaoImpl implements StudentDao {
-
-    @Override
-    public List ListStudent() {
+public class TeacherDaoImpl implements TeacherDao{
+    public List ListTeacher(){
         Session session = new HibernateUtil().getSession();
         try {
-            List<StudentEntity> list = session.createQuery("FROM StudentEntity user").list();
+            List<TeacherEntity> list = session.createQuery("FROM TeacherEntity Teacher").list();
             return list;
         } catch (HibernateException e) {
             e.printStackTrace();
@@ -26,12 +24,11 @@ public class StudentDaoImpl implements StudentDao {
         }
     }
 
-    @Override
-    public Boolean RegisterStudent(StudentEntity student){
+    public Boolean AddTeacher(TeacherEntity Teacher){
         Session session = new HibernateUtil().getSession();
         Transaction tran = session.beginTransaction();
         try {
-            session.save(student);
+            session.save(Teacher);
             tran.commit();
             return true;
         }catch (HibernateException e){
@@ -46,12 +43,11 @@ public class StudentDaoImpl implements StudentDao {
         }
     }
 
-    @Override
-    public Boolean UpdateUser(StudentEntity student){
+    public Boolean UpdateTeacher(TeacherEntity Teacher){
         Session session = new HibernateUtil().getSession();
         Transaction tran = session.beginTransaction();
         try {
-            session.update(student);
+            session.update(Teacher);
             tran.commit();
             return true;
         } catch (HibernateException e) {
@@ -66,27 +62,38 @@ public class StudentDaoImpl implements StudentDao {
         }
     }
 
-    @Override
-    public StudentEntity findStudentByID(String id){
+    public TeacherEntity findTeacherByID(int id){
         Session session = new HibernateUtil().getSession();
-        String hql = "from StudentEntity where sno = ?";
+        String hql = "from TeacherEntity where tid = ?";
         Query query = session.createQuery(hql);
         query.setParameter(0, id);
-        StudentEntity user = (StudentEntity) query.uniqueResult();
-        if (user != null) {
-            return user;
+        TeacherEntity teacher = (TeacherEntity) query.uniqueResult();
+        if (teacher != null) {
+            return teacher;
         } else {
-            return new StudentEntity();
+            return null;
         }
     }
 
-    @Override
-    public Boolean DeleteStudent(String id) {
+    public TeacherEntity findTeacherByName(String name){
         Session session = new HibernateUtil().getSession();
-        StudentEntity user = this.findStudentByID(id);
+        String hql = "from TeacherEntity where tUserName = ?";
+        Query query = session.createQuery(hql);
+        query.setParameter(0, name);
+        TeacherEntity teacher = (TeacherEntity) query.uniqueResult();
+        if (teacher != null) {
+            return teacher;
+        } else {
+            return null;
+        }
+    }
+
+    public Boolean DeleteTeacher(int id){
+        Session session = new HibernateUtil().getSession();
+        TeacherEntity teacher = this.findTeacherByID(id);
         Transaction tran = session.beginTransaction();
         try {
-            session.delete(user);
+            session.delete(teacher);
             tran.commit();
             return true;
         } catch (HibernateException e) {

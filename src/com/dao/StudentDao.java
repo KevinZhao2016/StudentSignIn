@@ -9,7 +9,7 @@ public interface StudentDao {
 
    // String Login(String TelNum, String Password);
 
-    int RegisterStudent(StudentEntity student);
+    Boolean RegisterStudent(StudentEntity student);
 
     Boolean UpdateUser(StudentEntity student);
 

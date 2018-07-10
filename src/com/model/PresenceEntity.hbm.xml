@@ -17,5 +17,11 @@
         <property name="cid">
             <column name="CID" sql-type="int(11)"/>
         </property>
+        <property name="time">
+            <column name="Time" sql-type="datetime"/>
+        </property>
+        <property name="state">
+            <column name="State" sql-type="int(11)"/>
+        </property>
     </class>
 </hibernate-mapping>
