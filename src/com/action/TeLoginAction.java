@@ -55,14 +55,12 @@ public class TeLoginAction {
         TeLoginServerImpl teloginServerImpl = new TeLoginServerImpl();
         String TName = teloginServerImpl.Login(TuserName,TpassWord);
         if(TName != null){
-//            ActionContext actionContext = ActionContext.getContext();
-//            Map session = actionContext.getSession();
-//            session.put("TName",TName);
             List<String> courseList = teloginServerImpl.SelectCourse(TuserName);
             this.setCourseList(courseList);
-//            session.put("courseList",courseList);
+            this.setFlag(true);
             return "success";
-        }else
+        }else{
             return "fail";
+        }
     }
 }
