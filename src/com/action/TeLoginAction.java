@@ -6,39 +6,61 @@ package com.action;
 import com.model.CourseEntity;
 import com.opensymphony.xwork2.ActionContext;
 import com.server.impl.TeLoginServerImpl;
+import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 
 public class TeLoginAction {
     private String TuserName;
-    private String TpassWord;
+    private Boolean flag;
+    private List<String> courseList;
 
-    public String getTuserName(){
+    public String getTuserName() {
         return TuserName;
     }
-    public void setTuserName(String TuserName){
-        this.TuserName = TuserName;
+
+    public void setTuserName(String tuserName) {
+        TuserName = tuserName;
     }
 
-    public String getTpassWord(){
-        return TpassWord;
+    public Boolean getFlag() {
+        return flag;
     }
-    public void setTpassWord(String TpassWord){
-        this.TpassWord = TpassWord;
+
+    public void setFlag(Boolean flag) {
+        this.flag = flag;
+    }
+
+    public List<String> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(List<String> courseList) {
+        this.courseList = courseList;
     }
 
     public String execute() throws Exception{
-        System.out.println(this.TuserName);
-        System.out.println(this.TpassWord);
+        String TpassWord;
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+
+        TpassWord = request.getParameter("password");
+        this.setTuserName(request.getParameter("username"));
+
         TeLoginServerImpl teloginServerImpl = new TeLoginServerImpl();
         String TName = teloginServerImpl.Login(TuserName,TpassWord);
         if(TName != null){
-            ActionContext actionContext = ActionContext.getContext();
-            Map session = actionContext.getSession();
-            session.put("TName",TName);
+//            ActionContext actionContext = ActionContext.getContext();
+//            Map session = actionContext.getSession();
+//            session.put("TName",TName);
             List<String> courseList = teloginServerImpl.SelectCourse(TuserName);
-            session.put("courseList",courseList);
+            this.setCourseList(courseList);
+//            session.put("courseList",courseList);
             return "success";
         }else
             return "fail";
