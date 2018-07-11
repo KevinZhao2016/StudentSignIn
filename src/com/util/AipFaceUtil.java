@@ -71,7 +71,8 @@ public class AipFaceUtil {
         System.out.println(res.toString(2));
         try {
             if (res.get("error_code").equals(0)) {
-                return (String)res.get("face_token");
+                JSONObject result = (JSONObject) res.get("result");
+                return (String)result.get("face_token");
             }else
                 return null;
         } catch (Exception e) {
@@ -97,7 +98,8 @@ public class AipFaceUtil {
         System.out.println(res.toString(2));
         try {
             if (res.get("error_code").equals(0)) {
-                return (String)res.get("face_token");
+                JSONObject result = (JSONObject) res.get("result");
+                return (String)result.get("face_token");
             }else
                 return null;
         } catch (Exception e) {

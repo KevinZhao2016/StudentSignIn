@@ -11,8 +11,8 @@
             <result name="fail" type="json" ></result>
         </action>
         <action name="studentRegist" class="com.action.StudentRegistAction" method="execute">
-            <result name="success" type="json" ></result>
-            <result name="fail" type="json" ></result>
+            <result name="success" type="redirect" >/register_success.html</result>
+            <result name="fail" type="redirect" >/register_fail.html</result>
         </action>
     </package>
 </struts>

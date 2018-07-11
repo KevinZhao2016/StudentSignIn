@@ -3,6 +3,10 @@ package com.action;
 import com.model.StudentEntity;
 import com.server.StudentRegistServer;
 import com.server.impl.StudentRegistServerImpl;
+import org.apache.struts2.ServletActionContext;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class StudentRegistAction {
     private String sno;
@@ -70,6 +74,11 @@ public class StudentRegistAction {
     }
 
     public String execute() throws Exception {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+
         StudentRegistServer studentRegistServer = new StudentRegistServerImpl();
         StudentEntity studentEntity= new StudentEntity();
         studentEntity.setsAge(this.getsAge());
@@ -79,7 +88,7 @@ public class StudentRegistAction {
         studentEntity.setsSex(this.getsSex());
         this.setToken(studentRegistServer.FaceAdd(this.getFace(),this.getSno()));
         studentEntity.setToken(this.getToken());
-
+        System.out.println(sName);
         if(this.getToken() == null){
             return "fail";
         }else {
