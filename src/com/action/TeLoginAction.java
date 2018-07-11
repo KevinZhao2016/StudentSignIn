@@ -60,6 +60,7 @@ public class TeLoginAction {
             this.setFlag(true);
             return "success";
         }else{
+            this.setFlag(false);
             return "fail";
         }
     }
