@@ -68,7 +68,7 @@ public class SignInAction {
         Boolean status = signInServer.GetSignInStatus(student.getSno(),cid);
         PresenceEntity presenceEntity = signInServer.SetPresenceEntity(student.getSno(),cid);
         this.setPresenceEntity(presenceEntity);
-        this.setCName((String)session.get("CName"));
+        this.setCName((String)session.get("cname"));
 
         if (student.getSno() != null) {
             this.setStudentEntity(student);

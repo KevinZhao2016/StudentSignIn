@@ -11,6 +11,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/xcConfirm.css">
 <script src="js/jquery.js"></script>
 <script src="js/tracking-min.js"></script>
 <script src="js/face-min.js"></script>
