@@ -11,7 +11,6 @@ import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.Timestamp;
 import java.util.Map;
 
 
@@ -19,6 +18,15 @@ public class SignInAction {
     private StudentEntity studentEntity;
     private PresenceEntity presenceEntity;
     private int flag;
+    private String CName;
+
+    public String getCName() {
+        return CName;
+    }
+
+    public void setCName(String CName) {
+        this.CName = CName;
+    }
 
     public StudentEntity getStudentEntity() {
         return studentEntity;
@@ -60,6 +68,7 @@ public class SignInAction {
         Boolean status = signInServer.GetSignInStatus(student.getSno(),cid);
         PresenceEntity presenceEntity = signInServer.SetPresenceEntity(student.getSno(),cid);
         this.setPresenceEntity(presenceEntity);
+        this.setCName((String)session.get("CName"));
 
         if (student.getSno() != null) {
             this.setStudentEntity(student);
