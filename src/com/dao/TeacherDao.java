@@ -16,4 +16,10 @@ public interface TeacherDao {
     TeacherEntity findTeacherByName(String name);
 
     Boolean DeleteTeacher(int id);
+
+    String Login(String TuserName, String TpassWord);
+
+    List ListCourse(String TuserName);
+
+    int CourseId(String CName, int Cno);
 }

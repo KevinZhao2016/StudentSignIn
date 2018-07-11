@@ -14,5 +14,17 @@
             <result name="success" type="redirect" >/register_success.html</result>
             <result name="fail" type="redirect" >/register_fail.html</result>
         </action>
+        <action name="adminLogin" class="com.action.AdLoginAction" method="execute">
+            <result name="success" type="redirect" ></result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+        <action name="TeacherLogin" class="com.action.TeLoginAction" method="execute">
+            <result name="success" type="redirect" ></result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+        <action name="SelectCourse" class="com.action.SelectCourseAction" method="execute">
+            <result name="success" type="redirect" ></result>
+            <result name="fail" type="redirect" ></result>
+        </action>
     </package>
 </struts>
