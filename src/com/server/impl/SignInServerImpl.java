@@ -31,6 +31,7 @@ public class SignInServerImpl implements SignInServer {
         presenceEntity.setCid(cid);
         presenceEntity.setTime(Calendar2Timestamp(calendar));
         int state;
+        System.out.println(presenceEntity.getTime());
         if(CompareTime(calendar,course.getcStart())){
             state = 1;//迟到
         }else
@@ -57,7 +58,7 @@ public class SignInServerImpl implements SignInServer {
         int Seconds = calendar.get(Calendar.SECOND);
         int Minutes = calendar.get(Calendar.MINUTE);
         int Hours = calendar.get(Calendar.HOUR_OF_DAY);
-        int Year = calendar.get(Calendar.YEAR);
+        int Year = calendar.get(Calendar.YEAR) - 1900;
         int Month = calendar.get(Calendar.MONTH);
         int Day = calendar.get(Calendar.DATE);
         Timestamp time = new Timestamp(Year, Month, Day, Hours, Minutes, Seconds, 0);

@@ -10,27 +10,89 @@ html{
     margin: 0;
 }
 #container_fa{
-    width:582px ;
-    height:520px;
+    width:36%;
+    height:auto;
     position: relative;
-    margin-top: 20%;
-    margin-left: 20%;
-    background-color: #b3d4fc;
+    margin-top: 3%;
+    margin-left: 10%;
+    background-color:rgba(16,77,166,1);
+    overflow: hidden;
+    border-radius:2em ;
+
+}
+#container_ra{
+    width:40%;
+    height:auto;
+    position: absolute;
+    right: 10%;
+    top: 6%;
+    background-color:rgba(16,77,166,1);;
+    overflow: hidden;
+    border-radius: 2em;
+
 }
 .container {
-    height: 436px;
-}
-#container_below{
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
+    height: 500px;
 }
 .message{
     float:left;
 }
 video, #canvas {
     position: absolute;
-    width: 581px;
-    height: 436px;
+    /*width: 640px;*/
+    /*height: 480px;*/
+}
+#container_below{
+    width: 100%;
+    height: auto;
+    margin-bottom: 5%;
+    color: darkblue;
+}
+#iden_text{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    letter-spacing: 3pt;
+}
+#text{
+    text-align: justify;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+#text1{
+    text-align: right;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    margin-top:20px;
+    margin-right: 10%;
+}
+.text2{
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    text-align: left;
+    letter-spacing: 1pt;
+    line-height: 300%;
+}
+#container_image{
+    margin-top: 5%;
+    display: flex;
+}
+#iden_image{
+    margin-top: 10%;
+    margin-left: 35%;
 }
 
+#container_info{
+    flex:none;
+    margin-left: 5%;
+}
+#container_stu{
+    margin-top: 5%;
+    margin-left: 50%;
+}
