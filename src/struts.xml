@@ -27,5 +27,37 @@
             <result name="fail" type="json" ></result>
         </action>
         <action name="DataStatistics" class="com.action.DataStatisticsAction" ></action>
+
+        <!--教师管理-->
+        <action name="ListTeacher" class="com.action.TeacherManagerAction" method="List">
+            <result name="success" type="redirect" >/backStage_Sys/teacher_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+        <action name="AddTeacher" class="com.action.TeacherManagerAction" method="Add">
+            <result name="success" type="redirect" >/backStage_Sys/teacher_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+        <action name="UpdateTeacher" class="com.action.TeacherManagerAction" method="Update">
+            <result name="success" type="redirect" >/backStage_Sys/teacher_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+        <action name="DeleteTeacher" class="com.action.TeacherManagerAction" method="Delete">
+            <result name="success" type="redirect" >/backStage_Sys/teacher_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+
+        <!--学生管理-->
+        <action name="ListStudent" class="com.action.StudentManagerAction" method="List">
+            <result name="success" type="redirect" >/backStage_Sys/student_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+        <action name="UpdateStudent" class="com.action.StudentManagerAction" method="Update">
+            <result name="success" type="redirect" >/backStage_Sys/student_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+        <action name="DeleteStudent" class="com.action.StudentManagerAction" method="Delete">
+            <result name="success" type="redirect" >/backStage_Sys/student_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
     </package>
 </struts>
