@@ -4,7 +4,10 @@ import com.model.PresenceEntity;
 import com.model.StudentEntity;
 import com.opensymphony.xwork2.ActionContext;
 import com.server.impl.DataStatisticsServerImpl;
+import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +18,15 @@ public class DataStatisticsAction {
     private String cname;
     private int cno;
     private int state;
+    private List list;
+
+    public List getList() {
+        return list;
+    }
+
+    public void setList(List list) {
+        this.list = list;
+    }
 
     public int getCno() {
         return cno;
@@ -35,17 +47,24 @@ public class DataStatisticsAction {
     public String getCname() {
         return cname;
     }
+
     public void setCname(String cname){
         this.cname = cname;
     }
 
     public String CountRate() throws Exception {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+
         DataStatisticsServerImpl dataStatisticsServerImpl = new DataStatisticsServerImpl();
         List listCount = dataStatisticsServerImpl.GetCount(cname, cno);
         if (listCount != null) {
-            ActionContext actionContext = ActionContext.getContext();
-            Map session = actionContext.getSession();
-            session.put("listCount", listCount);
+//            ActionContext actionContext = ActionContext.getContext();
+//            Map session = actionContext.getSession();
+//            session.put("listCount", listCount);
+            this.setList(listCount);
             return "success";
         } else {
             return "fail";
@@ -53,14 +72,20 @@ public class DataStatisticsAction {
     }
 
     public String SingleClass() throws Exception {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+
         DataStatisticsServerImpl dataStatisticsServerImpl = new DataStatisticsServerImpl();
 
         List listSingle = dataStatisticsServerImpl.SingleStudentInformaiton(cname, cno, state);
 
         if (listSingle != null) {
-            ActionContext actionContext = ActionContext.getContext();
-            Map session = actionContext.getSession();
-            session.put("listSingle", listSingle);
+//            ActionContext actionContext = ActionContext.getContext();
+//            Map session = actionContext.getSession();
+//            session.put("listSingle", listSingle);
+            this.setList(listSingle);
             return "success";
         } else {
             return "fail";
@@ -94,12 +119,18 @@ public class DataStatisticsAction {
     }
 
     public String AllClass() throws Exception {
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+
         DataStatisticsServerImpl dataStatisticsServerImpl = new DataStatisticsServerImpl();
         List listAll = dataStatisticsServerImpl.AllStudentInformation(cname, state);
         if (listAll != null) {
-            ActionContext actionContext = ActionContext.getContext();
-            Map session = actionContext.getSession();
-            session.put("listAll", listAll);
+//            ActionContext actionContext = ActionContext.getContext();
+//            Map session = actionContext.getSession();
+//            session.put("listAll", listAll);
+            this.setList(listAll);
             return "success";
         } else {
             return "fail";
