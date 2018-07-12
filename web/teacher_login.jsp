@@ -81,6 +81,15 @@
 
                                             </div>
                                         </div>
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <div class="form-group">
+                                                <label>选择操作</label>
+                                                <select  id="th_choice" class="form-control">
+                                                    <option value="0">课堂签到</option>
+                                                    <option value="1">签到统计</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="captain">
@@ -89,8 +98,7 @@
                                         <div class="col-sm-6 col-sm-offset-3">
                                             <div class="form-group" >
                                                 <label>课程名</label>
-                                                <select name="CName" class="form-control">
-
+                                                <select name="CName" class="form-control" id="select_Cname">
                                                 </select>
                                             </div>
                                         </div>

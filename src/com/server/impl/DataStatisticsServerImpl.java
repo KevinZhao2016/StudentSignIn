@@ -124,7 +124,7 @@ public class DataStatisticsServerImpl implements DataStatisticsServer{
         List list = dataStatisticsDao.AllClass(CName, state);
         List listAllInformation = new ArrayList();
         List listAllSno = new ArrayList();
-        int[][] count = new int[10000000][1];
+        int[][] count = new int[99999999][1];
         for (int i = 0; i < list.size(); i++) {
             List list1 = (List) list.get(i);
             for (int j = 0; j < list1.size(); j++) {

@@ -52,9 +52,15 @@ public class TeLoginAction {
         this.setTuserName(request.getParameter("username"));
         TeLoginServerImpl teloginServerImpl = new TeLoginServerImpl();
         String TName = teloginServerImpl.Login(TuserName,TpassWord);
+
+        ActionContext actionContext = ActionContext.getContext();
+        Map session = actionContext.getSession();
+
         if(TName != null){
             List<String> courseList = teloginServerImpl.SelectCourse(TuserName);
             this.setCourseList(courseList);
+            session.put("CourseList",courseList);
+            session.put("TName",TuserName);
             this.setFlag(true);
             return "success";
         }else{

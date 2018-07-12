@@ -4,6 +4,7 @@
 $('#sub_tech_1').click(function () {
     var teach_name = document.getElementsByName('TuserName')[0].value;
     var teach_passwd = document.getElementsByName('TpassWord')[0].value;
+    var choice = document.getElementById('th_choice').value;
     var select = document.getElementsByName('Cname')[0];
     $('#course_info').css("display","block");
     $.ajax({
@@ -16,12 +17,11 @@ $('#sub_tech_1').click(function () {
         },
         success:function (result) {
                 if(result.flag){
-                    $('#sub_tech_2').trigger("click");
-                    var select = document.getElementsByName("CName")[0];
-                    for (var i=0; i<result.courseList.length;i++){
-                        var course_name=result.courseList[i];
-                        var item = new Option(course_name,course_name);
-                        select.options.add(item);
+                    if(choice==0){
+                        $('#sub_tech_2').trigger("click");
+                        add_courseName('select_Cname',result);
+                    }else {
+                        window.location.href="backStage_Sys/register_mng.jsp";
                     }
                 }else {
                     var txt=  "用户名或密码错误，请重新输入";
@@ -51,3 +51,11 @@ $('#sub_tech_final').click(function () {
         }
     });
 });
+function add_courseName(select_id,result) {
+    var select = document.getElementById(select_id);
+    for (var i=0; i<result.courseList.length;i++){
+        var course_name=result.courseList[i];
+        var item = new Option(course_name,course_name);
+        select.options.add(item);
+    }
+}

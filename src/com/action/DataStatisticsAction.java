@@ -19,47 +19,40 @@ public class DataStatisticsAction {
     private int cno;
     private int state;
     private List list;
-
     public List getList() {
         return list;
     }
-
     public void setList(List list) {
         this.list = list;
     }
-
     public int getCno() {
         return cno;
     }
-
     public void setCno(int cno) {
         this.cno = cno;
     }
-
     public int getState() {
         return state;
     }
-
     public void setState(int state) {
         this.state = state;
     }
-
     public String getCname() {
         return cname;
     }
-
     public void setCname(String cname){
         this.cname = cname;
     }
-
     public String CountRate() throws Exception {
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpServletResponse response = ServletActionContext.getResponse();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-
+        this.cname = request.getParameter("cname");
+        this.cno = new Integer(request.getParameter("cno")).intValue();
         DataStatisticsServerImpl dataStatisticsServerImpl = new DataStatisticsServerImpl();
         List listCount = dataStatisticsServerImpl.GetCount(cname, cno);
+        System.out.println(cno);
         if (listCount != null) {
 //            ActionContext actionContext = ActionContext.getContext();
 //            Map session = actionContext.getSession();
@@ -76,11 +69,11 @@ public class DataStatisticsAction {
         HttpServletResponse response = ServletActionContext.getResponse();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-
         DataStatisticsServerImpl dataStatisticsServerImpl = new DataStatisticsServerImpl();
-
+        this.cname = request.getParameter("cname");
+        this.cno = new Integer(request.getParameter("cno")).intValue();
+        this.state = new Integer(request.getParameter("state")).intValue();
         List listSingle = dataStatisticsServerImpl.SingleStudentInformaiton(cname, cno, state);
-
         if (listSingle != null) {
 //            ActionContext actionContext = ActionContext.getContext();
 //            Map session = actionContext.getSession();
@@ -123,8 +116,9 @@ public class DataStatisticsAction {
         HttpServletResponse response = ServletActionContext.getResponse();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-
         DataStatisticsServerImpl dataStatisticsServerImpl = new DataStatisticsServerImpl();
+        this.cname = request.getParameter("cname");
+        this.state = new Integer(request.getParameter("state")).intValue();
         List listAll = dataStatisticsServerImpl.AllStudentInformation(cname, state);
         if (listAll != null) {
 //            ActionContext actionContext = ActionContext.getContext();

@@ -97,7 +97,17 @@ table {
 	text-align: center;
 }
 .choose_sort{
-	float: right;
+	float: left;
+	margin-top: 10px;
 	margin-bottom: 10px;
-	width: 200px;
+	width: 130px;
+	height: 50px;
+	margin-left: 120px;
+}
+.choose_sort select{
+	height: 32px;
+}
+#bt_sub{
+	width: 100px;
+	margin-top: 17px;
 }
