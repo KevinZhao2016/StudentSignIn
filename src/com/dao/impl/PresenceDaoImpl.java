@@ -63,7 +63,7 @@ public class PresenceDaoImpl implements PresenceDao {
         String hql = "from PresenceEntity where cid = ?";
         Query query = session.createQuery(hql);
         query.setParameter(0, CID);
-        List<PresenceEntity> list = (List<PresenceEntity>) query.uniqueResult();
+        List<PresenceEntity> list = (List<PresenceEntity>) query.getResultList();
         if (list != null) {
             return list;
         } else {

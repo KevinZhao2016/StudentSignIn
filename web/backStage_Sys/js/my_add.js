@@ -31,7 +31,7 @@ function submit_info() {
     alert(state);
     $.ajax(
         {
-            url:"/action/DataStatisticsAllClass",
+            url:"/action/GetAllClassInfoAction",
             type:"post",
             dataType:"json",
             data:{
@@ -40,37 +40,7 @@ function submit_info() {
                 state:state
             },
             success:function (result) {
-                alert(result);
-            }
-        }
-    );
-    $.ajax(
-        {
-            url:"/action/DataStatisticsSingleClass",
-            type:"post",
-            dataType:"json",
-            data:{
-                cname:coursename,
-                cno:courseNo,
-                state:state
-            },
-            success:function (result) {
-                alert(result);
-            }
-        }
-    );
-    $.ajax(
-        {
-            url:"/action/DataStatisticsCountRate",
-            type:"post",
-            dataType:"json",
-            data:{
-                cname:coursename,
-                cno:courseNo,
-                state:state
-            },
-            success:function (result) {
-                alert(result);
+                // alert(result);
             }
         }
     );

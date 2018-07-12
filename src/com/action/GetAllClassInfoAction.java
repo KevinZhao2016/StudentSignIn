@@ -28,7 +28,7 @@ public class GetAllClassInfoAction {
         response.setContentType("text/html;charset=UTF-8");
         DataStatisticsServerImpl dataStatisticsServerImpl = new DataStatisticsServerImpl();
         String cname = request.getParameter("cname");
-
+        System.out.println(cname);
         PresenceInfoServer presenceInfoServer = new PresenceInfoServerImpl();
         List<AllClassResultEntity> list = presenceInfoServer.GetAllClassResult(cname);
         if(list!=null){

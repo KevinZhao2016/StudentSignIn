@@ -33,15 +33,7 @@
             <result name="fail" type="json" ></result>
         </action>
         <!--教师课程统计-->
-        <action name="DataStatisticsAllClass" class="com.action.DataStatisticsAction" method="AllClass" >
-            <result name="success" type="json" ></result>
-            <result name="fail" type="json" ></result>
-        </action>
-        <action name="DataStatisticsSingleClass" class="com.action.DataStatisticsAction" method="SingleClass" >
-            <result name="success" type="json" ></result>
-            <result name="fail" type="json" ></result>
-        </action>
-        <action name="DataStatisticsCountRate" class="com.action.DataStatisticsAction" method="CountRate" >
+        <action name="GetAllClassInfoAction" class="com.action.GetAllClassInfoAction" method="GetAllClassInfo" >
             <result name="success" type="json" ></result>
             <result name="fail" type="json" ></result>
         </action>
