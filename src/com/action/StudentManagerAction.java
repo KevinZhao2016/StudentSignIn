@@ -87,7 +87,7 @@ public class StudentManagerAction {
         if (list != null){
             ActionContext actionContext = ActionContext.getContext();
             Map session = actionContext.getSession();
-            session.put("StationList", list);
+            session.put("StudentList", list);
             return "success";
         }else
             return "fail";

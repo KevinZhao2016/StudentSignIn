@@ -13,7 +13,7 @@ public interface StudentDao {
 
     Boolean UpdateUser(StudentEntity student);
 
-    StudentEntity  findStudentByID(String id);
+    StudentEntity findStudentByID(String id);
 
     Boolean DeleteStudent(String id);
 }
