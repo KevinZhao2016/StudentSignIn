@@ -48,10 +48,8 @@ public class TeLoginAction {
         HttpServletResponse response = ServletActionContext.getResponse();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-
         TpassWord = request.getParameter("password");
         this.setTuserName(request.getParameter("username"));
-
         TeLoginServerImpl teloginServerImpl = new TeLoginServerImpl();
         String TName = teloginServerImpl.Login(TuserName,TpassWord);
         if(TName != null){

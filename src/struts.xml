@@ -26,5 +26,6 @@
             <result name="success" type="json" >/face_detect.jsp</result>
             <result name="fail" type="json" ></result>
         </action>
+        <action name="DataStatistics" class="com.action.DataStatisticsAction" ></action>
     </package>
 </struts>

@@ -7,9 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Insert title here</title>
+<title>签到</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/xcConfirm.css">
 <script src="js/jquery.js"></script>
@@ -22,7 +23,7 @@
 <div id="container_fa">
     <div class="container">
         <video id="video" preload autoplay loop muted></video>
-        <%--<canvas id="canvas" ></canvas>--%>
+        <canvas id="canvas" width="580" height="436"></canvas>
     </div>
     <div id="container_below">
         <p id="iden_text">
@@ -56,7 +57,6 @@
             <li class="text2">学号:<span class="text3"></span></li>
         </ul>
     </div>
-
 </div>
 </body>
 </html>

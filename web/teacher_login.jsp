@@ -77,7 +77,6 @@
                                         <div class="col-sm-6 col-sm-offset-3">
                                             <div class="form-group">
                                                 <label>密码</label>
-
                                                 <input type="password" class="form-control" name="TpassWord" placeholder="..." required>
 
                                             </div>
