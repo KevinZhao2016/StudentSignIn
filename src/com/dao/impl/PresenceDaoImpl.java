@@ -57,4 +57,32 @@ public class PresenceDaoImpl implements PresenceDao {
             return null;
         }
     }
+
+    public List<PresenceEntity> findPresenceByCID(int CID){
+        Session session = new HibernateUtil().getSession();
+        String hql = "from PresenceEntity where cid = ?";
+        Query query = session.createQuery(hql);
+        query.setParameter(0, CID);
+        List<PresenceEntity> list = (List<PresenceEntity>) query.uniqueResult();
+        if (list != null) {
+            return list;
+        } else {
+            return null;
+        }
+    }
+
+    public List<PresenceEntity> findPresenceByStateAndCID(int State,int CID){
+        Session session = new HibernateUtil().getSession();
+        String hql = "from PresenceEntity where state = ? and cid = ?";
+        Query query = session.createQuery(hql);
+        query.setParameter(0, State);
+        query.setParameter(1, CID);
+        List<PresenceEntity> list = (List<PresenceEntity>) query.getResultList();
+        if (list != null) {
+            return list;
+        } else {
+            return null;
+        }
+    }
+
 }

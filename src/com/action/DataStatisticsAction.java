@@ -1,9 +1,12 @@
 package com.action;
 
+import com.model.AllClassResultEntity;
 import com.model.PresenceEntity;
 import com.model.StudentEntity;
 import com.opensymphony.xwork2.ActionContext;
+import com.server.PresenceInfoServer;
 import com.server.impl.DataStatisticsServerImpl;
+import com.server.impl.PresenceInfoServerImpl;
 import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
@@ -142,4 +145,6 @@ public class DataStatisticsAction {
 //            System.out.println(count[no][0]);
 //        }
     }
+
+
 }

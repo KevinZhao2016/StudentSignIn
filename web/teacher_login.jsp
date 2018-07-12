@@ -8,15 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="zh">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>Paper Bootstrap Wizard by Creative Tim</title>
 
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta name="viewport" content="width=device-width"/>
     <!-- CSS Files -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/paper-bootstrap-wizard.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/paper-bootstrap-wizard.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/xcConfirm.css">
     <!-- Fonts and Icons -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
@@ -33,7 +33,7 @@
                 <!--      Wizard container        -->
                 <div class="wizard-container">
                     <div class="card wizard-card" data-color="azure" id="wizard">
-                        <form >
+                        <form>
                             <!--        You can switch " data-color="azure" "  with one of the next bright colors: "blue", "green", "orange", "red"           -->
                             <div class="wizard-header">
                                 <h3 class="wizard-title">教师登录</h3>
@@ -41,7 +41,8 @@
                             </div>
                             <div class="wizard-navigation">
                                 <div class="progress-with-circle">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="2" style="width: 21%;"></div>
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1"
+                                         aria-valuemax="2" style="width: 21%;"></div>
                                 </div>
                                 <ul>
                                     <li>
@@ -71,20 +72,22 @@
                                         <div class="col-sm-6 col-sm-offset-3">
                                             <div class="form-group">
                                                 <label>教师名</label>
-                                                <input type="text" class="form-control"  placeholder="..." name="TuserName" required>
+                                                <input type="text" class="form-control" placeholder="..."
+                                                       name="TuserName" required>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-sm-offset-3">
                                             <div class="form-group">
                                                 <label>密码</label>
-                                                <input type="password" class="form-control" name="TpassWord" placeholder="..." required>
+                                                <input type="password" class="form-control" name="TpassWord"
+                                                       placeholder="..." required>
 
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-sm-offset-3">
                                             <div class="form-group">
                                                 <label>选择操作</label>
-                                                <select  id="th_choice" class="form-control">
+                                                <select id="th_choice" class="form-control">
                                                     <option value="0">课堂签到</option>
                                                     <option value="1">签到统计</option>
                                                 </select>
@@ -96,7 +99,7 @@
                                     <h5 class="info-text">确认本次课程信息</h5>
                                     <div class="row" id="course_info" style="display: none">
                                         <div class="col-sm-6 col-sm-offset-3">
-                                            <div class="form-group" >
+                                            <div class="form-group">
                                                 <label>课程名</label>
                                                 <select name="CName" class="form-control" id="select_Cname">
                                                 </select>
@@ -124,12 +127,16 @@
                             </div>
                             <div class="wizard-footer">
                                 <div class="pull-right">
-                                    <input type='button' class='btn btn-else  btn-fill btn-primary btn-wd' id="sub_tech_1" value='下一步' />
-                                    <input type='button' class='btn btn-next btn-fill btn-primary btn-wd' name='next' value='下一步' id="sub_tech_2" style="display: none"/>
-                                    <input type='button' class='btn btn-finish btn-fill btn-primary btn-wd' name='finish' id="sub_tech_final" value='确认' />
+                                    <input type='button' class='btn btn-else  btn-fill btn-primary btn-wd'
+                                           id="sub_tech_1" value='下一步'/>
+                                    <input type='button' class='btn btn-next btn-fill btn-primary btn-wd' name='next'
+                                           value='下一步' id="sub_tech_2" style="display: none"/>
+                                    <input type='button' class='btn btn-finish btn-fill btn-primary btn-wd'
+                                           name='finish' id="sub_tech_final" value='确认'/>
                                 </div>
                                 <div class="pull-left">
-                                    <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='上一步' />
+                                    <input type='button' class='btn btn-previous btn-default btn-wd' name='previous'
+                                           value='上一步'/>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>

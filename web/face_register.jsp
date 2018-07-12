@@ -8,15 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>学生注册</title>
 
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta name="viewport" content="width=device-width"/>
     <!-- CSS Files -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/paper-bootstrap-wizard.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/paper-bootstrap-wizard.css" rel="stylesheet"/>
     <link href="css/themify-icons.css" rel="stylesheet">
     <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
     <script src="js/tracking-min.js"></script>
@@ -31,14 +31,16 @@
                 <!--      Wizard container        -->
                 <div class="wizard-container">
                     <div class="card wizard-card" data-color="orange" id="wizardProfile">
-                        <form id="register_form" method="post" action="/action/studentRegist" onsubmit="return check_sub()">
+                        <form id="register_form" method="post" action="/action/studentRegist"
+                              onsubmit="return check_sub()">
                             <!--  You can switch " data-color="orange" "  with one of the next bright colors: "blue", "green", "orange", "red", "azure"          -->
                             <div class="wizard-header text-center">
                                 <h3 class="wizard-title">创建学生信息</h3>
                             </div>
                             <div class="wizard-navigation">
                                 <div class="progress-with-circle">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1"
+                                         aria-valuemax="3" style="width: 21%;"></div>
                                 </div>
                                 <ul>
                                     <li>
@@ -68,27 +70,30 @@
                                         <div class="col-sm-3 col-sm-offset-1">
                                             <div class="form-group">
                                                 <label>姓名</label>
-                                                <input type="text" class="form-control" placeholder="..." name="sName" required>
+                                                <input type="text" class="form-control" placeholder="..." name="sName"
+                                                       required>
                                             </div>
                                         </div>
                                         <div class="col-sm-4 ">
                                             <div class="form-group">
                                                 <label>学号</label>
-                                                <input type="text" class="form-control" placeholder="..." name="sno" required>
+                                                <input type="text" class="form-control" placeholder="..." name="sno"
+                                                       required>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>年龄</label>
-                                                <input type="number" class="form-control" placeholder="..." name="sAge" required>
+                                                <input type="number" class="form-control" placeholder="..." name="sAge"
+                                                       required>
                                             </div>
                                         </div>
                                         <div class="col-sm-5 col-sm-offset-1">
                                             <div class="form-group">
                                                 <label>专业</label>
-                                                <select name="sMajor"  class="form-control" required>
-                                                    <option value ="计算机">计算机</option>
-                                                    <option value ="软件工程">软件工程</option>
+                                                <select name="sMajor" class="form-control" required>
+                                                    <option value="计算机">计算机</option>
+                                                    <option value="软件工程">软件工程</option>
                                                     <option value="物联网">物联网</option>
                                                 </select>
                                             </div>
@@ -96,9 +101,9 @@
                                         <div class="col-sm-5">
                                             <div class="form-group">
                                                 <label>性别</label><br>
-                                                <select name="sSex"  class="form-control" required>
-                                                    <option value ="男">男</option>
-                                                    <option value ="女">女</option>
+                                                <select name="sSex" class="form-control" required>
+                                                    <option value="男">男</option>
+                                                    <option value="女">女</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -117,12 +122,15 @@
                             <textarea name="face" id="face" cols="30" rows="10" style="display: none"></textarea>
                             <div class="wizard-footer">
                                 <div class="pull-right">
-                                    <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Next' />
-                                    <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd' id='take_photo' value='拍照' />
+                                    <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next'
+                                           value='Next'/>
+                                    <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd'
+                                           id='take_photo' value='拍照'/>
                                 </div>
                                 <div class="pull-left">
                                     <!--<input type='button' class='btn btn-previous btn-default btn-wd' id="previous" value='上一步' />-->
-                                    <input type='submit' class='btn btn-default btn-wd' id="clear" value='上传' style="display: none"/>
+                                    <input type='submit' class='btn btn-default btn-wd' id="clear" value='上传'
+                                           style="display: none"/>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>

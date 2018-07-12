@@ -15,5 +15,11 @@ public interface PresenceDao {
 
     PresenceEntity findPresenceBySnoAndCID(String sno, int CID);
 
+    List<PresenceEntity> findPresenceByStateAndCID(int State,int CID);
+
+    List<PresenceEntity> findPresenceByCID(int CID);
+
+//    PresenceEntity findPresenceByCname(String Cname);
+
 //    Boolean DeleteStudent(String id);
 }

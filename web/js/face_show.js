@@ -14,17 +14,18 @@ $(function () {
         var canvas = document.getElementById('canvas');
         var context = canvas.getContext('2d');
         var clear = document.getElementById('clear');
-        context.drawImage(video,0,0,580,436);
-        canvas.style.display="block";
-        clear.style.display="block";
-        this.value="重新拍照";
+        context.drawImage(video, 0, 0, 580, 436);
+        canvas.style.display = "block";
+        clear.style.display = "block";
+        this.value = "重新拍照";
 
     });
 });
+
 function check_sub() {
     var canvas = document.getElementById('canvas');
     var imgStr0 = canvas.toDataURL("image/png");
-    imgStr =  imgStr0.substring(imgStr0.indexOf(",")+1);
-    document.getElementById('face').value=imgStr;
+    imgStr = imgStr0.substring(imgStr0.indexOf(",") + 1);
+    document.getElementById('face').value = imgStr;
     return true;
 }
