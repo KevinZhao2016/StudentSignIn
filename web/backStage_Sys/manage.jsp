@@ -49,7 +49,7 @@
                     <td>3</td>
                     <td>课程管理</td>
                     <td class="text-right">
-                        <form action="/action/" method="post">
+                        <form action="/action/ListCourse.action" method="post">
                             <button type="submit" class="btn btn-info">
                                 <i class="fa fa-arrow-circle-right"></i>
                             </button>

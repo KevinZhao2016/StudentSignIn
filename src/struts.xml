@@ -6,6 +6,8 @@
 
 <struts>
     <package  name="default" namespace="/action" extends="struts-default,json-default">
+
+        <!--学生录入与注册-->
         <action name="signin" class="com.action.SignInAction" method="execute">
             <result name="success" type="json" ></result>
             <result name="fail" type="json" ></result>
@@ -14,10 +16,14 @@
             <result name="success" type="redirect" >/register_success.html</result>
             <result name="fail" type="redirect" >/register_fail.html</result>
         </action>
+
+        <!--管理员登录-->
         <action name="adminLogin" class="com.action.AdLoginAction" method="execute">
-            <result name="success" type="redirect" ></result>
+            <result name="success" type="redirect" >/backStage_Sys/manage.jsp</result>
             <result name="fail" type="redirect" ></result>
         </action>
+
+        <!--教师登录与选课-->
         <action name="TeacherLogin" class="com.action.TeLoginAction" method="execute">
             <result name="success" type="json" ></result>
             <result name="fail" type="json" ></result>
@@ -26,7 +32,11 @@
             <result name="success" type="json" >/face_detect.jsp</result>
             <result name="fail" type="json" ></result>
         </action>
-        <action name="DataStatistics" class="com.action.DataStatisticsAction" ></action>
+
+        <!--教师课程统计-->
+        <action name="DataStatistics" class="com.action.DataStatisticsAction" >
+
+        </action>
 
         <!--教师管理-->
         <action name="ListTeacher" class="com.action.TeacherManagerAction" method="List">
@@ -59,5 +69,24 @@
             <result name="success" type="redirect" >/backStage_Sys/student_mng.jsp</result>
             <result name="fail" type="redirect" ></result>
         </action>
+
+        <!--课程管理-->
+        <action name="ListCourse" class="com.action.CourseManagerAction" method="List">
+            <result name="success" type="redirect">/backStage_Sys/course_mng.jsp</result>
+            <result name="fail" type="redirect"></result>
+        </action>
+        <action name="AddCourse" class="com.action.CourseManagerAction" method="Add">
+            <result name="success" type="redirect">/backStage_Sys/course_mng.jsp</result>
+            <result name="fail" type="redirect"></result>
+        </action>
+        <action name="UpdateCourse" class="com.action.CourseManagerAction" method="Update">
+            <result name="success" type="redirect">/backStage_Sys/course_mng.jsp</result>
+            <result name="fail" type="redirect"></result>
+        </action>
+        <action name="DeleteCourse" class="com.action.CourseManagerAction" method="Delete">
+            <result name="success" type="redirect">/backStage_Sys/course_mng.jsp</result>
+            <result name="fail" type="redirect"></result>
+        </action>
+
     </package>
 </struts>
