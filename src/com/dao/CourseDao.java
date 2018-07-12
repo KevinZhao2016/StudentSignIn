@@ -15,5 +15,7 @@ public interface CourseDao {
 
     List<CourseEntity> findCourseByCname(String Cname);
 
+    CourseEntity findCourseByCnameAndCno(String Cname,int cno);
+
     Boolean DeleteCourse(int id);
 }

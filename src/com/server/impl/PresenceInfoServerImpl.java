@@ -6,12 +6,10 @@ import com.dao.StudentDao;
 import com.dao.impl.CourseDaoImpl;
 import com.dao.impl.PresenceDaoImpl;
 import com.dao.impl.StudentDaoImpl;
-import com.model.AllClassResultEntity;
-import com.model.CourseEntity;
-import com.model.PresenceEntity;
-import com.model.StudentEntity;
+import com.model.*;
 import com.server.PresenceInfoServer;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,6 +55,45 @@ public class PresenceInfoServerImpl implements PresenceInfoServer {
                     }
                 }
             }
+        }
+        return resultList;
+    }
+
+    public List<SingleClassResultEntity> GetSingleClassResult(String Cname, int Cno){
+        PresenceDao presenceDao = new PresenceDaoImpl();
+        CourseDao courseDao = new CourseDaoImpl();
+        StudentDao studentDao = new StudentDaoImpl();
+        CourseEntity courseEntity = courseDao.findCourseByCnameAndCno(Cname,Cno);
+        List<SingleClassResultEntity> resultList = new ArrayList<SingleClassResultEntity>();
+        List<PresenceEntity> presenceEntityList = presenceDao.findPresenceByCID(courseEntity.getCid());
+        for (int i = 0; i < presenceEntityList.size(); i++) {
+            SingleClassResultEntity singleResult = new SingleClassResultEntity();
+            StudentEntity student = studentDao.findStudentByID(presenceEntityList.get(i).getSno());
+            int State = presenceEntityList.get(i).getState();
+            Timestamp time = presenceEntityList.get(i).getTime();
+            singleResult.setState(State);
+            singleResult.setTime(time);
+            singleResult.setStudent(student);
+            resultList.add(singleResult);
+        }
+        return resultList;
+    }
+
+    public List<SingleClassResultEntity> GetSingleClassResult(String Cname,int Cno,int State){
+        PresenceDao presenceDao = new PresenceDaoImpl();
+        CourseDao courseDao = new CourseDaoImpl();
+        StudentDao studentDao = new StudentDaoImpl();
+        CourseEntity courseEntity = courseDao.findCourseByCnameAndCno(Cname,Cno);
+        List<SingleClassResultEntity> resultList = new ArrayList<SingleClassResultEntity>();
+        List<PresenceEntity> presenceEntityList = presenceDao.findPresenceByStateAndCID(State,courseEntity.getCid());
+        for (int i = 0; i < presenceEntityList.size(); i++) {
+            SingleClassResultEntity singleResult = new SingleClassResultEntity();
+            StudentEntity student = studentDao.findStudentByID(presenceEntityList.get(i).getSno());
+            Timestamp time = presenceEntityList.get(i).getTime();
+            singleResult.setState(State);
+            singleResult.setTime(time);
+            singleResult.setStudent(student);
+            resultList.add(singleResult);
         }
         return resultList;
     }

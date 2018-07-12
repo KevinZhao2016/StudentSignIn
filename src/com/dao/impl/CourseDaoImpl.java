@@ -89,6 +89,20 @@ public class CourseDaoImpl implements CourseDao{
         }
     }
 
+    public CourseEntity findCourseByCnameAndCno(String Cname,int cno){
+        Session session = new HibernateUtil().getSession();
+        String hql = "from CourseEntity where cName = ? and cno = ?";
+        Query query = session.createQuery(hql);
+        query.setParameter(0, Cname);
+        query.setParameter(1,cno);
+        CourseEntity course = (CourseEntity) query.getSingleResult();
+        if (course != null) {
+            return course;
+        } else {
+            return null;
+        }
+    }
+
     public Boolean DeleteCourse(int id){
         Session session = new HibernateUtil().getSession();
         CourseEntity course = this.findCourseByID(id);
