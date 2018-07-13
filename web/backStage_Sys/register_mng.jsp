@@ -99,20 +99,36 @@
                         </div>
                         <div class="row">
                             <div id="container">
-                                <table class="zebra zebra_2" id="tableSort">
+                                <table class="zebra zebra_2" id="tableSort" style="display: none;table-layout:fixed">
+                                <thead>
+                                <tr>
+                                    <th>学号</th>
+                                    <th>学生姓名</th>
+                                    <th>专业</th>
+                                    <th>性别</th>
+                                    <th>课程名</th>
+                                    <th>课程序号</th>
+                                    <th>签到时间</th>
+                                    <th>签到状态</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody0">
+
+                                </tbody>
+                            </table>
+                                <table class="zebra zebra_2" id="tableSort_2" style="table-layout:fixed;display: table">
                                     <thead>
                                     <tr>
                                         <th>学号</th>
                                         <th>学生姓名</th>
                                         <th>专业</th>
-                                        <th>年龄</th>
+                                        <th>性别</th>
                                         <th>课程名</th>
-                                        <th>课程序号</th>
-                                        <th>签到时间</th>
-                                        <th>签到状态</th>
+                                        <th>签到次数</th>
                                     </tr>
                                     </thead>
-                                    <tbody id="">
+                                    <tbody id="tbody1">
+
                                     </tbody>
                                 </table>
                             </div>

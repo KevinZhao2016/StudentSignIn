@@ -17,6 +17,13 @@ html, body{
 	width:960px;
 	margin:0 auto;
 }
+#tableSort_2{
+	width: 900px;
+	margin: auto;
+}
+#tableSort_2 td{
+	width: 100px;
+}
 #center{
 	width: 600px;
 	margin: 20px auto;

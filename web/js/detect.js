@@ -19,12 +19,12 @@ $(function () {
                 context.clearRect(0, 0, canvas.width, canvas.height);
             } else {
                 context.clearRect(0, 0, canvas.width, canvas.height);
-                // event.data.forEach(function (rect) {
-                //     context.strokeStyle = '#ff0000';
-                //     context.strokeRect(rect.x, rect.y, rect.width, rect.height);
-                //     context.fillStyle = "#ff0000";
-                //     //console.log(rect.x, rect.width, rect.y, rect.height);
-                // });
+                event.data.forEach(function (rect) {
+                    context.strokeStyle = '#ff0000';
+                    context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+                    context.fillStyle = "#ff0000";
+                    //console.log(rect.x, rect.width, rect.y, rect.height);
+                });
                 if (flag == 1 && (event.data[0].width > 160)) {
                     flag = 0;
                     getPhoto();
@@ -47,7 +47,6 @@ $(function () {
             url: "/action/signin",
             type: "post",
             dataType: "json",
-            async: false,
             data: {
                 face: imgStr.substring(imgStr.indexOf(",") + 1)
             },

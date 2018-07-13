@@ -37,6 +37,14 @@
             <result name="success" type="json" ></result>
             <result name="fail" type="json" ></result>
         </action>
+        <action name="GetSingleClassInfoWithState" class="com.action.GetSingleInfoAction" method="GetSingleClassInfoWithState" >
+            <result name="success" type="json" ></result>
+            <result name="fail" type="json" ></result>
+        </action>
+        <action name="GetSingleClassInfo" class="com.action.GetSingleInfoAction" method="GetSingleClassInfo" >
+            <result name="success" type="json" ></result>
+            <result name="fail" type="json" ></result>
+        </action>
         <!--教师管理-->
         <action name="ListTeacher" class="com.action.TeacherManagerAction" method="List">
             <result name="success" type="redirect" >/backStage_Sys/teacher_mng.jsp</result>

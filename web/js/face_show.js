@@ -18,11 +18,27 @@ $(function () {
         canvas.style.display = "block";
         clear.style.display = "block";
         this.value = "重新拍照";
-
     });
 });
 
 function check_sub() {
+    var regName =new RegExp(/^[\u4e00-\u9fa5]{2,4}$/);
+    var regId = new RegExp(/^\d{8}$/);
+    var name=document.getElementsByName('sName')[0].value;
+    var id=document.getElementsByName('sno')[0].value;
+    var age=document.getElementsByName('sAge')[0].value;
+    if(!regName.test(name)){
+        alert("请输入正确的名字！");
+        return false;
+    }
+    if(!regId.test(id)){
+        alert("请输入8位学号！");
+        return false;
+    }
+    if(age<17){
+        alert("请输入正确的年龄!");
+        return false;
+    }
     var canvas = document.getElementById('canvas');
     var imgStr0 = canvas.toDataURL("image/png");
     imgStr = imgStr0.substring(imgStr0.indexOf(",") + 1);

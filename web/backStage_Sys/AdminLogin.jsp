@@ -37,11 +37,11 @@
                 <h2>登录</h2>
                 <div class="form-group">
                     <label for="userName" class="sr-only">userName</label>
-                    <input type="text" class="form-control" id="userName" name="userName">
+                    <input type="text" class="form-control" id="userName" name="userName" placeholder="用户名">
                 </div>
                 <div class="form-group">
                     <label for="passWord" class="sr-only">passWord</label>
-                    <input type="passWord" class="form-control" id="passWord" name="passWord">
+                    <input type="passWord" class="form-control" id="passWord" name="passWord" placeholder="密码">
                 </div>
                 <div class="form-group">
                     <label for="remember"><input type="checkbox" id="remember"> 记住我</label>
