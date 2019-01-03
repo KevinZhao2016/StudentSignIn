@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://111.231.22.45:3306/StuDB</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.connection.pool_size">20</property>
+        <property name="connection.characterEncoding">UTF-8</property>
+        <property name="connection.username">Ubuntu</property>
+        <property name="connection.password">123456</property>
+        <mapping resource="com/model/AdminEntity.hbm.xml"/>
+        <mapping class="com.model.AdminEntity"/>
+        <mapping resource="com/model/CourseEntity.hbm.xml"/>
+        <mapping class="com.model.CourseEntity"/>
+        <mapping resource="com/model/PresenceEntity.hbm.xml"/>
+        <mapping class="com.model.PresenceEntity"/>
+        <mapping resource="com/model/StudentEntity.hbm.xml"/>
+        <mapping class="com.model.StudentEntity"/>
+        <mapping resource="com/model/TeacherEntity.hbm.xml"/>
+        <mapping class="com.model.TeacherEntity"/>
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.model.PresenceEntity" table="Presence" schema="StuDB">
+        <id name="pid">
+            <column name="PID" sql-type="int(11)"/>
+        </id>
+        <property name="tUserName">
+            <column name="TUserName" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="sno">
+            <column name="Sno" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="cid">
+            <column name="CID" sql-type="int(11)"/>
+        </property>
+        <property name="time">
+            <column name="Time" sql-type="datetime"/>
+        </property>
+        <property name="state">
+            <column name="State" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>

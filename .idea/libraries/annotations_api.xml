@@ -1,0 +1,27 @@
+<component name="libraryTable">
+  <library name="annotations-api">
+    <CLASSES>
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/annotations-api.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/catalina-ant.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/catalina-ha.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/catalina-tribes.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/catalina.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/ecj-4.4.2.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/el-api.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/jasper-el.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/jasper.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/jsp-api.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/mysql-connector-java-5.1.44-bin.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/servlet-api.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/tomcat-api.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/tomcat-coyote.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/tomcat-dbcp.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/tomcat-jdbc.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/tomcat-util.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/tomcat7-websocket.jar!/" />
+      <root url="jar://C:/apache-tomcat-7.0.82/lib/websocket-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

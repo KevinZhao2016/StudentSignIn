@@ -1,0 +1,104 @@
+
+html{
+    width: 100%;
+    height: 100%;
+    background: url(../img/back2.jpg) bottom center no-repeat ;
+    background-size:100%;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+#container_fa{
+    width:36%;
+    height:auto;
+    position: relative;
+    margin-top: 3%;
+    margin-left: 10%;
+    background-color:#5b8edc;
+    overflow: hidden;
+    border-radius:2em ;
+
+}
+#container_ra{
+    width:40%;
+    height:auto;
+    position: absolute;
+    right: 10%;
+    top: 6%;
+    background-color:#5b8edc;
+    overflow: hidden;
+    border-radius: 2em;
+
+}
+.container {
+    height: 500px;
+}
+.message{
+    float:left;
+}
+video, #canvas {
+    position: absolute;
+    /*width: 640px;*/
+    /*height: 480px;*/
+}
+#canvas{
+
+}
+#container_below{
+    width: 100%;
+    height: auto;
+    margin-bottom: 5%;
+    color: darkblue;
+}
+#iden_text{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    letter-spacing: 3pt;
+}
+#text{
+    text-align: justify;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+#text1{
+    text-align: right;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    margin-top:20px;
+    margin-right: 10%;
+}
+.text2{
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    text-align: left;
+    letter-spacing: 1pt;
+    line-height: 300%;
+}
+#container_image{
+    margin-top: 5%;
+    display: flex;
+}
+#iden_image{
+    margin-top: 10%;
+    margin-right: 2%;
+}
+#shortCut{
+    margin-right: 10%;
+}
+#container_info{
+    width: 50%;
+    flex:none;
+    margin-left: 2%;
+}
+#container_stu{
+    margin-top: 5%;
+    margin-left: 50%;
+}

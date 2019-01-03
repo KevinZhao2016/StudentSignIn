@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package  name="default" namespace="/action" extends="struts-default,json-default">
+
+        <!--学生录入与注册-->
+        <action name="signin" class="com.action.SignInAction" method="execute">
+            <result name="success" type="json" ></result>
+            <result name="fail" type="json" ></result>
+        </action>
+        <action name="studentRegist" class="com.action.StudentRegistAction" method="execute">
+            <result name="success" type="redirect" >/register_success.html</result>
+            <result name="fail" type="redirect" >/register_fail.html</result>
+        </action>
+
+        <!--管理员登录-->
+        <action name="adminLogin" class="com.action.AdLoginAction" method="execute">
+            <result name="success" type="redirect" >/backStage_Sys/manage.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+
+        <!--教师登录与选课-->
+        <action name="TeacherLogin" class="com.action.TeLoginAction" method="execute">
+            <result name="success" type="json" ></result>
+            <result name="fail" type="json" ></result>
+        </action>
+        <action name="SelectCourse" class="com.action.SelectCourseAction" method="execute">
+            <result name="success" type="json" >/face_detect.jsp</result>
+            <result name="fail" type="json" ></result>
+        </action>
+        <!--教师课程统计-->
+        <action name="GetAllClassInfoAction" class="com.action.GetAllClassInfoAction" method="GetAllClassInfo" >
+            <result name="success" type="json" ></result>
+            <result name="fail" type="json" ></result>
+        </action>
+        <action name="GetSingleClassInfoWithState" class="com.action.GetSingleInfoAction" method="GetSingleClassInfoWithState" >
+            <result name="success" type="json" ></result>
+            <result name="fail" type="json" ></result>
+        </action>
+        <action name="GetSingleClassInfo" class="com.action.GetSingleInfoAction" method="GetSingleClassInfo" >
+            <result name="success" type="json" ></result>
+            <result name="fail" type="json" ></result>
+        </action>
+        <!--教师管理-->
+        <action name="ListTeacher" class="com.action.TeacherManagerAction" method="List">
+            <result name="success" type="redirect" >/backStage_Sys/teacher_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+        <action name="AddTeacher" class="com.action.TeacherManagerAction" method="Add">
+            <result name="success" type="redirect" >/backStage_Sys/teacher_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+        <action name="UpdateTeacher" class="com.action.TeacherManagerAction" method="Update">
+            <result name="success" type="redirect" >/backStage_Sys/teacher_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+        <action name="DeleteTeacher" class="com.action.TeacherManagerAction" method="Delete">
+            <result name="success" type="redirect" >/backStage_Sys/teacher_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+
+        <!--学生管理-->
+        <action name="ListStudent" class="com.action.StudentManagerAction" method="List">
+            <result name="success" type="redirect" >/backStage_Sys/student_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+        <action name="UpdateStudent" class="com.action.StudentManagerAction" method="Update">
+            <result name="success" type="redirect" >/backStage_Sys/student_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+        <action name="DeleteStudent" class="com.action.StudentManagerAction" method="Delete">
+            <result name="success" type="redirect" >/backStage_Sys/student_mng.jsp</result>
+            <result name="fail" type="redirect" ></result>
+        </action>
+
+        <!--课程管理-->
+        <action name="ListCourse" class="com.action.CourseManagerAction" method="List">
+            <result name="success" type="redirect">/backStage_Sys/course_mng.jsp</result>
+            <result name="fail" type="redirect"></result>
+        </action>
+        <action name="AddCourse" class="com.action.CourseManagerAction" method="Add">
+            <result name="success" type="redirect">/backStage_Sys/course_mng.jsp</result>
+            <result name="fail" type="redirect"></result>
+        </action>
+        <action name="UpdateCourse" class="com.action.CourseManagerAction" method="Update">
+            <result name="success" type="redirect">/backStage_Sys/course_mng.jsp</result>
+            <result name="fail" type="redirect"></result>
+        </action>
+        <action name="DeleteCourse" class="com.action.CourseManagerAction" method="Delete">
+            <result name="success" type="redirect">/backStage_Sys/course_mng.jsp</result>
+            <result name="fail" type="redirect"></result>
+        </action>
+
+    </package>
+</struts>

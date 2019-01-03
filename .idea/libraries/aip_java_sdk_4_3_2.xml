@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="aip-java-sdk-4.3.2">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../javalib/aip-java-sdk-4/aip-java-sdk-4.3.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../javalib/aip-java-sdk-4/json-20160810.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../javalib/aip-java-sdk-4/log4j-1.2.17.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/aip-java-sdk-4.3.2/aip-java-sdk-4.3.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/aip-java-sdk-4.3.2/json-20160810.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/aip-java-sdk-4.3.2/log4j-1.2.17.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
